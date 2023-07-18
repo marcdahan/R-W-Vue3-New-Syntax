@@ -16,8 +16,10 @@
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
+    "eslint": "^8.45.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-vue": "^9.15.1",
     "prettier": "^2.7.1",
     "vite": "^3.0.9"
   }
