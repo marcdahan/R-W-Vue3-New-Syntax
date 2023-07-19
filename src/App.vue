@@ -17,4 +17,8 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
 </template>
 
-<style scoped></style>
+<style>
+h2 {
+  height: 20rem;
+}
+</style>
