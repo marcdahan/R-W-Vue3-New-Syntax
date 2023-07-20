@@ -22,3 +22,22 @@ export default {
   }
 }
 </script>
+<style scoped>
+p , input, button{
+  font-size: 30px;
+}
+input, button{
+  font-size: 20px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #5a42b9;
+}
+</style>

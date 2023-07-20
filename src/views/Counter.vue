@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'Test',
+  name: 'Test2',
   data(){
     return {
       counter: 0
@@ -22,22 +22,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-p , input, button{
-  font-size: 30px;
-}
-input, button{
-  font-size: 20px;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
