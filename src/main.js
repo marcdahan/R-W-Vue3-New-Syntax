@@ -11,3 +11,5 @@ app.use( createPinia() )
 app.use( router )
 
 const mountedApp = app.mount( '#app' )
+const myVar = `John DOE`
+export default {myVar, mountedApp}

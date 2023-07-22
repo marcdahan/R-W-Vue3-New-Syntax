@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import HomeView from '../views/HomeView.vue' // importe la home page seulement
+import EventListView from '../views/EventListView.vue' // importe la home page seulement
 
 const router = createRouter(
   {
@@ -8,7 +8,7 @@ const router = createRouter(
       {
         path: '/',
         name: 'home',
-        component: HomeView
+        component: EventListView
       },
       {
         path: '/about',
