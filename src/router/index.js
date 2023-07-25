@@ -27,6 +27,11 @@ const router = createRouter(
         path: '/counter2',
         name: 'counter2',
         component: () => import( '../views/Counter2.vue' )
+      },
+      {
+        path: '/event-detail',
+        name: 'eventdetail',
+        component: () => import( '../views/EventDetail.vue' )
       }
     ]
   }
