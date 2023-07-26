@@ -2,8 +2,22 @@
   "printWidth": 80,
   "singleQuote": false,
   "semi": false,
-  "trailingComma": "never",
   "bracesSpacing": false,
-  "bracketSpacing": false,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "trailingComma": "none",
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "eslintIntegration": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides":{
+    "files": "*.json,*.Vue,*.js",
+    "options": {
+      "semi": true,
+      "parser": "json",
+      "bracketSpacing": true
+    }
+  }
 }
