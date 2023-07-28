@@ -1,22 +1,19 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios';
 import EventCard from '@/components/EventCard.vue'
+import EventServices from '@/services/EventServices.js'
 
 
 const events = ref(null)
 
 onMounted(()=> {
-  axios
-  .get('http://demo1895579.mockable.io/API-Calls-with-Axios'
-  ).then((response)=> {
-    console.log( "call succeed to http://demo1895579.mockable.io/API-Calls-with-Axio")
+  EventServices.getEvents()
+  .then((response)=> {
     events.value = response.data
   }).catch((error)=> {
     console.log(error)
   })
 })
-
 
 </script>
 
