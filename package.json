@@ -2,7 +2,7 @@
   "name": "real-world-vue",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite && vue-devtools",
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/devtools": "^6.5.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.45.0",
     "eslint-config-google": "^0.14.0",

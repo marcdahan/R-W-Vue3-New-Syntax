@@ -1,8 +1,8 @@
-<script setup>
+<script>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-export default () {
+export default {
   data() {
     return {
       event: null
