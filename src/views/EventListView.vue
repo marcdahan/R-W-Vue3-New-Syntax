@@ -9,6 +9,7 @@ const events = ref(null)
 onMounted(()=> {
   EventServices.getEvents()
   .then((response)=> {
+    console.log(`response received : `+ JSON.stringify(response.data[0]) + `, {...`)
     events.value = response.data
   }).catch((error)=> {
     console.log(error)
