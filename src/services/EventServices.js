@@ -15,6 +15,6 @@ export default {
   },
   getEventDetail ( id ) {
     id = 123
-    return apiClient.get( '/event/' + id )
+    return apiClient.get( '/events/' + id )
   }
 }

@@ -1,49 +1,47 @@
 <script>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import EventServices from '@/services/EventServices.js'
 
 export default {
   data() {
     return {
-      event: null
+      eventDetail: {
+        title: null,
+        category: null,
+        description: null,
+        location : null,
+        date : null,
+        time : null,
+        organizer : null
+      }
     }
   },
-  created() {
-    //fetch event by id
+  methods: {
+    setEventDetail(obj) {
+      this.eventDetail = obj
+    }
+  },
+  created  () {
+    EventServices.getEventDetail()
+    .then((response)=> {
+      console.info(`response received from getEvent: `+ JSON.stringify(response.data[0]) + `, {...`)
+        this.setEventDetail(response.data)
+    }).catch((error)=> {
+      console.log(error)
+    })
   },
 }
-
-/* defineProps({
-  event: {
-    type: Object,
-    required: true,
-  },
-})
-
-
-const event = ref(null)
-
-onMounted(()=> {
-  axios
-  .get('http://demo1895579.mockable.io/API-Calls-with-Axios/id=' + id
-  ).then((response)=> {
-    console.log( "call succeed to http://demo1895579.mockable.io/API-Calls-with-Axio")
-    event.value = response.data
-  }).catch((error)=> {
-    console.log(error)
-  })
-}) */
 
 </script>
 
 <template>
   <div class="events event-detail">
-    <h2>{{ event.title }}</h2>
-    <span>{{ event.category }}</span>
-    <span>{{ event.description }}</span>
-    <span>@{{ event.time }} on {{ event.date }}</span>
-    <span>organizer : {{ event.organizer }}</span>
-    <span>location : {{ event.locaction }}</span>
+    <h2>{{ this.eventDetail.title }}</h2>
+    <p>{{ this.eventDetail.category }}</p>
+    <span>{{ this.eventDetail.category }}</span>
+    <p>{{ this.eventDetail.description }}</p>
+    <p>@{{ this.eventDetail.time }} on {{ this.eventDetail.date }}</p>
+    <p>organizer : {{ this.eventDetail.organizer }}</p>
+    <p>location : {{ this.eventDetail.locaction }}</p>
   </div>
 </template>
 
