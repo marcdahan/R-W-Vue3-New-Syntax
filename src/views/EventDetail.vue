@@ -37,11 +37,10 @@ export default {
   <div class="events event-detail">
     <h2>{{ this.eventDetail.title }}</h2>
     <p>{{ this.eventDetail.category }}</p>
-    <span>{{ this.eventDetail.category }}</span>
     <p>{{ this.eventDetail.description }}</p>
+    <p>location : {{ this.eventDetail.locaction }}</p>
     <p>@{{ this.eventDetail.time }} on {{ this.eventDetail.date }}</p>
     <p>organizer : {{ this.eventDetail.organizer }}</p>
-    <p>location : {{ this.eventDetail.locaction }}</p>
   </div>
 </template>
 
