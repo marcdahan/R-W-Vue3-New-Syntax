@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-  <div class="events event-detail">
+  <div class="events event-detail" v-if="eventDetail">
     <h2>{{ this.eventDetail.title }}</h2>
     <p>{{ this.eventDetail.category }}</p>
     <p>{{ this.eventDetail.description }}</p>
