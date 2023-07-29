@@ -19,8 +19,9 @@ const router = createRouter(
         component: () => import( '../views/AboutView.vue' ) // au clic importe la page AboutView
       },
       {
-        path: '/event-detail/123',
-        name: 'eventdetail',
+        path: '/event/:id',
+        props: true,
+        name: 'event-detail',
         component: () => import( '../views/EventDetail.vue' )
       }
     ]

@@ -20,7 +20,7 @@ export default {
       this.eventDetail = obj
     }
   },
-  created  () {
+  mounted () {
     EventServices.getEventDetail()
     .then((response)=> {
       console.info(`response received from getEvent: `+ JSON.stringify(response.data[0]) + `, {...`)
