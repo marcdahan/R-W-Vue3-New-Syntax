@@ -19,17 +19,7 @@ const router = createRouter(
         component: () => import( '../views/AboutView.vue' ) // au clic importe la page AboutView
       },
       {
-        path: '/counter',
-        name: 'counter',
-        component: () => import( '../views/Counter.vue' )
-      },
-      {
-        path: '/counter2',
-        name: 'counter2',
-        component: () => import( '../views/Counter2.vue' )
-      },
-      {
-        path: '/event-detail',
+        path: '/event-detail/123',
         name: 'eventdetail',
         component: () => import( '../views/EventDetail.vue' )
       }
