@@ -1,46 +1,31 @@
-<script>
-import EventServices from '@/services/EventServices.js'
+<script setup>
+import { ref, onMounted } from 'vue'
+import EventService from '@/services/EventServices.js'
 
-export default {
-  data() {
-    return {
-      eventDetail: {
-        title: null,
-        category: null,
-        description: null,
-        location : null,
-        date : null,
-        time : null,
-        organizer : null
-      }
-    }
+const props = defineProps({
+  id: {
+    required: true,
   },
-  methods: {
-    setEventDetail(obj) {
-      this.eventDetail = obj
-    }
-  },
-  mounted () {
-    EventServices.getEventDetail()
-    .then((response)=> {
-      console.info(`response received from getEvent: `+ JSON.stringify(response.data[0]) + `, {...`)
-        this.setEventDetail(response.data)
-    }).catch((error)=> {
+})
+
+const event = ref(null)
+
+onMounted(() => {
+  EventService.getEvent(props.id)
+    .then((response) => {
+      event.value = response.data
+    })
+    .catch((error) => {
       console.log(error)
     })
-  },
-}
-
+})
 </script>
 
 <template>
-  <div class="events event-detail" v-if="eventDetail">
-    <h2>{{ this.eventDetail.title }}</h2>
-    <p>{{ this.eventDetail.category }}</p>
-    <p>{{ this.eventDetail.description }}</p>
-    <p>location : {{ this.eventDetail.locaction }}</p>
-    <p>@{{ this.eventDetail.time }} on {{ this.eventDetail.date }}</p>
-    <p>organizer : {{ this.eventDetail.organizer }}</p>
+  <div v-if="event">
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+    <p>{{ event.description }}</p>
   </div>
 </template>
 
