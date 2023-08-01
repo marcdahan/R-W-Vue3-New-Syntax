@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed} from 'vue'
 import EventService from '@/services/EventServices.js'
 
 const props = defineProps({
@@ -23,9 +23,11 @@ onMounted(() => {
 
 <template>
   <div v-if="event">
+    <p>Event N° {{ $route.params.id }}</p>
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
+    <span hidden>{{ console.log($route) }}</span>
   </div>
 </template>
 
